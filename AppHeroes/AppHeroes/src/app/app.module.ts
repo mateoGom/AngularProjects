@@ -1,16 +1,25 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppComponent } from './app.component';
+import { APP_ROUTING } from './app.routes';
 
+import { AppComponent } from './app.component';
+import { HomeComponent } from './components/home/home.component';
+import { HeroesComponent } from './components/heroes/heroes.component';
+import { AboutComponent } from './components/about/about.component';
+import { NavbarComponent } from './components/shared/navbar/navbar.component';
+import { HeroesService } from './servicios/heroes.service';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+
+    HomeComponent,
+    HeroesComponent,
+    AboutComponent,
+    NavbarComponent,
   ],
-  imports: [
-    BrowserModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  imports: [BrowserModule, APP_ROUTING],
+  providers: [HeroesService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
